@@ -1,4 +1,4 @@
-# Gauss API
+# Numerical Calculation API
 
 ## Overview
 The **Gauss API** is a Flask-based web service that solves linear systems using the Gaussian elimination method. Clients can send a matrix via a JSON request, and the API returns the computed solutions.
@@ -69,8 +69,7 @@ By default, the API will be available at `http://127.0.0.1:5000`.
 The API returns JSON-formatted error messages in case of invalid input, such as:
 ```json
 {
-  "status": "error",
-  "message": "Invalid format. Send a JSON with the key 'matrix'."
+  "error": "Invalid format. Send a JSON with the key 'matrix'."
 }
 ```
 
