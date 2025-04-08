@@ -1,6 +1,8 @@
 import numpy as np
 from fractions import Fraction
 
+from utils import convert_to_decimal_and_fraction
+
 
 class GaussSolver:
     def __init__(self, matrix):
@@ -42,10 +44,6 @@ class GaussSolver:
 
         variable_names = [f'a{i + 1}' for i in range(self.n)]
 
-        result = {}
-        for name, value in zip(variable_names, solutions):
-            frac = Fraction(value).limit_denominator(1000)
-
-            result[name] = [round(float(value), 10), str(frac)]
+        result = convert_to_decimal_and_fraction(variable_names, solutions)
 
         return result
