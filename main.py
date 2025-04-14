@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from API.config import Config
 from API.routes import routes
 from dotenv import load_dotenv
@@ -8,6 +9,9 @@ load_dotenv()
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
+cors_origins = os.getenv("CORS_ORIGINS", "*").split(",")
+CORS(app, origins=cors_origins)
 
 app.register_blueprint(routes)
 

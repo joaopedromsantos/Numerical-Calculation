@@ -70,7 +70,3 @@ class AbsoluteAndRelativeError:
 
         return result
 
-
-teste = AbsoluteAndRelativeError(1/9, 0.11)
-
-print(teste.solve())
