@@ -6,8 +6,8 @@ The **Numerical Calculation API** is a Flask-based web service designed to perfo
 
 ## 🚀 Public API
 
-Access the public version of this API at:  
-🔗 **https://numerical-calculation.onrender.com**
+Go to the numerical calculation site where the API is being used:  
+🔗 **https://numerical-calculation-page.vercel.app/**
 
 ---
 

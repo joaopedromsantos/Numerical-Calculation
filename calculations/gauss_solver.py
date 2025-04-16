@@ -12,6 +12,16 @@ class GaussSolver:
 
         self.__fraction_conversion()
 
+    def __is_inconsistent(self):
+        """
+        Checks if any row of the matrix has all zero coefficients,
+        but the independent term (last column) is not zero.
+        """
+        for row in self.A:
+            if all(val == 0 for val in row[:-1]) and row[-1] != 0:
+                return True
+        return False
+
     def __fraction_conversion(self):
         """ Converts all elements of the matrix to Fraction. """
         for i in range(self.n):
@@ -40,6 +50,10 @@ class GaussSolver:
     def solve(self):
         """ Executes the process and returns the values of the unknowns with names (a1, a2, a3, etc.). """
         self.__gauss_elimination()
+
+        if self.__is_inconsistent():
+            raise ValueError("Inconsistent system - no possible solution.")
+
         solutions = self.__backward_substitution()
 
         variable_names = [f'a{i + 1}' for i in range(self.n)]
