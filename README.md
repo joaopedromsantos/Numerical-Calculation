@@ -78,7 +78,8 @@ Solves a system of linear equations using Gaussian Elimination.
   "data": {
     "a1": [3, "3"],
     "a2": [-2.5, "-5/2"],
-    "a3": [7, "7"]
+    "a3": [7, "7"], 
+    "equation": "P(x) = 3 - 5/2 * x + 7 * x^2"
   }
 }
 
@@ -109,6 +110,33 @@ Calculates absolute and relative errors between `x` and `y`.
     "top_quota_absolute_error": [0.5, "1/2"],
     "x": 5.2,
     "y": 5.3
+  }
+}
+```
+
+---
+
+### 📍 `POST /API/polynomial-fit`
+
+Performs a polynomial fit for given x and y data points and returns the coefficients and the polynomial equation.
+
+#### ➤ Request:
+```json
+{
+  "x": [1, 2, 3, 4, 5],
+  "y": [3.5, 2, 1.1, 2.3, 4.1]
+}
+```
+
+#### ✅ Response:
+```json
+{
+  "success": true,
+  "data": {
+    "a1": [6.5, "13/2"],
+    "a2": [-3.5785714286, "-501/140"],
+    "a3": [0.6214285714, "87/140"],
+    "equation": "P(x) = 13/2 - 501/140 * x + 87/140 * x^2"
   }
 }
 ```
